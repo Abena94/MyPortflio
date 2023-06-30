@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
+import { client } from '../../client';
 import './Education.scss';
 
 const Education = () => {
@@ -33,9 +33,20 @@ const Education = () => {
               </div>
               
                 
+                  <>
+                    <motion.div
+                      whileInView={{ opacity: [0, 1] }}
+                      transition={{ duration: 0.5 }}
+                      className="app__education-exp-work"
+                      data-tip
+                      data-for={education.degree}
+                      key={education.degree}
+                    >
                       <h4 className="bold-text">{education.degree}</h4>
                       <p className="p-text">{education.school}</p>
-                    
+                    </motion.div>
+            
+                  </>
                 
               
             </motion.div>
